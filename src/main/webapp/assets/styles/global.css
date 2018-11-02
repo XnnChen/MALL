@@ -2,13 +2,36 @@
     margin-bottom: 0;
     border-radius: 0;
     height: 0;
+    background-color: #414141;
+
+}
+
+header.jumbotron{
+    background-color: #fff !important;
 }
 
 footer.jumbotron {
     margin-top: 30px;
     margin-bottom: 0;
+    background-color: #414141;
+}
+.text{
+    text-align: center;
+    color: #fff;
 }
 
-header.jumbotron{
-    background-color: #fff !important;
+.hr{
+    height: 1px;
+    width: 1090px;
+    margin-bottom: 27px;
+    background-color: #4f4f4f;
+    border: 0;
+    margin: 0 auto;
+}
+.siteInfo{
+    text-align: center;
+    color: #999;
+}
+.spilt{
+    margin: auto 13px;
 }
