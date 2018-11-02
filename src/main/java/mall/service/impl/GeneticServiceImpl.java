@@ -54,6 +54,6 @@ public abstract class GeneticServiceImpl<T extends Serializable, ID extends Numb
 
     @Override
     public void modify(String sqlId, Object parameter) {
-        geneticDao.remove(sqlId, parameter);
+        geneticDao.modify(sqlId, parameter);
     }
 }
