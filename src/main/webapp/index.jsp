@@ -13,12 +13,6 @@
     <style>
       @import "assets/bootstrap/css/bootstrap.css";
       @import "assets/styles/global.css";
-      #nav{
-        height: 0px;
-      }
-      header.jumbotron{
-        background-color: #fff !important;
-      }
     </style>
   </head>
   <body>
