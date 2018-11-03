@@ -9,7 +9,7 @@
 <%@ include file="commons/inc.jsp"%>
 <html>
 <head>
-    <title>sign in page</title>
+    <title>sign up page</title>
     <style>
         @import "assets/bootstrap/css/bootstrap.css";
         @import "assets/styles/sign.css";
@@ -21,21 +21,21 @@
 <header class="index jumbotron"></header>
 <main class="container">
     <div class="title-line">
-        <span class="tit">登录</span>
+        <span class="tit">注册</span>
     </div>
     <section class="col-md-4 col-md-offset-4">
-        <form action="${ctx}/user/signIn" method="post">
+        <form action="${ctx}/user/signUp" method="post">
             <div class="form-group">
                 <label for="email">Email</label>
-                <input id="email" name="email" class="form-control" value="tom@tom.com">
+                <input id="email" name="email" class="form-control">
+                <span id="hint">${requestScope.message}</span>
             </div>
             <div class="form-group">
                 <label for="password">Password</label>
-                <input id="password" type="password" name="password" class="form-control" value="123">
+                <input id="password" type="password" name="password" class="form-control">
             </div>
-            <button id="signIn" type="submit" class="btn btn-primary btn-block">登录</button>
+            <button id="signUp" type="submit" class="btn btn-success btn-block">注册</button>
         </form>
-        ${requestScope.message}
     </section>
 </main>
 <footer class="index jumbotron"></footer>
