@@ -12,7 +12,7 @@ import java.util.Map;
 
 @Controller
 @RequestMapping("user")
-public class UserController extends BaseConctroller {
+public class UserController extends BaseController {
 
     private UserService userService;
 

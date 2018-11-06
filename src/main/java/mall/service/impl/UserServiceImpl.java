@@ -1,6 +1,6 @@
 package mall.service.impl;
 
-import mall.dao.GeneticDao;
+import mall.dao.GenericDao;
 import mall.dao.UserDao;
 import mall.dao.UserInfoDao;
 import mall.model.User;
@@ -15,7 +15,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 @Service
-public class UserServiceImpl extends GeneticServiceImpl<User, Integer> implements UserService {
+public class UserServiceImpl extends GenericServiceImpl<User, Integer> implements UserService {
 
     private UserDao userDao;
     private UserInfoDao userInfoDao;
@@ -23,9 +23,9 @@ public class UserServiceImpl extends GeneticServiceImpl<User, Integer> implement
 
     @Override
     @Autowired
-    void setGeneticDao(GeneticDao<User, Integer> geneticDao) {
-        super.geneticDao = geneticDao;
-        this.userDao = (UserDao) geneticDao;
+    void setGenericDao(GenericDao<User, Integer> genericDao) {
+        super.genericDao = genericDao;
+        this.userDao = (UserDao) genericDao;
     }
 
     @Autowired

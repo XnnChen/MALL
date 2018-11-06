@@ -1,6 +1,6 @@
 package mall.dao.impl;
 
-import mall.dao.GeneticDao;
+import mall.dao.GenericDao;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.StringUtils;
@@ -9,7 +9,7 @@ import java.io.Serializable;
 import java.lang.reflect.ParameterizedType;
 import java.util.List;
 
-public abstract class GeneticDaoImpl<T extends Serializable, ID extends Number> implements GeneticDao<T, ID> {
+public abstract class GenericDaoImpl<T extends Serializable, ID extends Number> implements GenericDao<T, ID> {
 
     private SqlSession sqlSession;
     private String namespace;
@@ -20,7 +20,7 @@ public abstract class GeneticDaoImpl<T extends Serializable, ID extends Number> 
     }
 
     @SuppressWarnings("unchecked")
-    public GeneticDaoImpl() {
+    public GenericDaoImpl() {
         ParameterizedType parameterizedType = (ParameterizedType) getClass().getGenericSuperclass();
         Class<T> clazz = (Class<T>) parameterizedType.getActualTypeArguments()[0];
         namespace = StringUtils.uncapitalize(clazz.getSimpleName());

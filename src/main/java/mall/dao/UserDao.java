@@ -2,5 +2,5 @@ package mall.dao;
 
 import mall.model.User;
 
-public interface UserDao extends GeneticDao<User, Integer> {
+public interface UserDao extends GenericDao<User, Integer> {
 }

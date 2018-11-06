@@ -2,7 +2,7 @@ package mall.service;
 
 import mall.model.User;
 
-public interface UserService extends GeneticService<User, Integer> {
+public interface UserService extends GenericService<User, Integer> {
 
     User queryUserByEmail(String email);
 

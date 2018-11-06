@@ -5,5 +5,5 @@ import mall.model.UserInfo;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public class UserInfoDaoImpl extends GeneticDaoImpl<UserInfo, Integer> implements UserInfoDao {
+public class UserInfoDaoImpl extends GenericDaoImpl<UserInfo, Integer> implements UserInfoDao {
 }

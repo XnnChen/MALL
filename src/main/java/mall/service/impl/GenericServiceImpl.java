@@ -1,59 +1,59 @@
 package mall.service.impl;
 
-import mall.dao.GeneticDao;
-import mall.service.GeneticService;
+import mall.dao.GenericDao;
+import mall.service.GenericService;
 
 import java.io.Serializable;
 import java.util.List;
 
-public abstract class GeneticServiceImpl<T extends Serializable, ID extends Number> implements GeneticService<T, ID> {
+public abstract class GenericServiceImpl<T extends Serializable, ID extends Number> implements GenericService<T, ID> {
 
-    GeneticDao<T, ID> geneticDao;
+    GenericDao<T, ID> genericDao;
 
-    abstract void setGeneticDao(GeneticDao<T, ID> geneticDao);
+    abstract void setGenericDao(GenericDao<T, ID> genericDao);
 
     @Override
     public void create(T t) {
-        geneticDao.create(t);
+        genericDao.create(t);
     }
 
     @Override
     public List<T> queryAll() {
-        return geneticDao.queryAll();
+        return genericDao.queryAll();
     }
 
     @Override
     public List<T> queryList(String sqlId, Object parameter) {
-        return geneticDao.queryList(sqlId, parameter);
+        return genericDao.queryList(sqlId, parameter);
     }
 
     @Override
     public T queryById(ID id) {
-        return geneticDao.queryById(id);
+        return genericDao.queryById(id);
     }
 
     @Override
     public void modify(T t) {
-        geneticDao.modify(t);
+        genericDao.modify(t);
     }
 
     @Override
     public void remove(ID id) {
-        geneticDao.remove(id);
+        genericDao.remove(id);
     }
 
     @Override
     public void create(String sqlId, Object parameter) {
-        geneticDao.create(sqlId, parameter);
+        genericDao.create(sqlId, parameter);
     }
 
     @Override
     public T queryOne(String sqlId, Object parameter) {
-        return geneticDao.queryOne(sqlId, parameter);
+        return genericDao.queryOne(sqlId, parameter);
     }
 
     @Override
     public void modify(String sqlId, Object parameter) {
-        geneticDao.modify(sqlId, parameter);
+        genericDao.modify(sqlId, parameter);
     }
 }

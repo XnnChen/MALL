@@ -1,9 +1,9 @@
-package mall.service;
+package mall.dao;
 
 import java.io.Serializable;
 import java.util.List;
 
-public interface GeneticService<T extends Serializable, ID extends Number> {
+public interface GenericDao<T extends Serializable, ID extends Number> {
 
     void create(T t);
 
