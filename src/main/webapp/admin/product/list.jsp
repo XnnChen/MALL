@@ -18,10 +18,10 @@
                 <th>TITLE</th>
                 <th>DESC</th>
                 <th>PRICE</th>
-                <th>ORIGINALPRICE</th>
-                <th>COVERPICTURE</th>
-                <th>SLIDEPICTURES</th>
-                <th>DETAILPICTURES</th>
+                <th>ORIGINAL PRICE</th>
+                <th>COVER PICTURE</th>
+                <th>SLIDE PICTURES</th>
+                <th>DETAIL PICTURES</th>
                 <th>SPEC</th>
                 <th>STOCK</th>
                 <th>STATUS</th>

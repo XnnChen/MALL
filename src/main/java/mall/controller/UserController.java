@@ -48,6 +48,12 @@ public class UserController extends BaseController {
             session.setAttribute("user", user);
             return "redirect:/portal/home.jsp";
         }
-        return "/index.jsp";
+        return "/sign-in.jsp";
+    }
+
+    @RequestMapping("signOut")
+    public String signOut(){
+        session.invalidate();
+        return "redirect:/index.jsp";
     }
 }

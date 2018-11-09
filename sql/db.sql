@@ -73,4 +73,3 @@ from mall.user;
 select *
 from mall.user_info;
 
-# String title, String desc, double price, double originalPrice, String coverPicture, String slidePictures, String detailPictures, String spec, int stock, int status, String createTime, String updateTime, int categoryId

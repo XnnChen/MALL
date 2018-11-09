@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.*;
 
 import mall.model.Product;
 import mall.service.ProductService;
+import org.springframework.web.multipart.MultipartFile;
 
 @Controller
 @RequestMapping("product")
@@ -19,9 +20,18 @@ public class ProductController extends BaseController {
     }
 
     @RequestMapping("create")
-    private String create(Product product) {
-        productService.create(product);
-        return "redirect:/product/queryAll";
+    private String create(
+            Product product,
+            @RequestParam MultipartFile coverPictureFile,
+            @RequestParam MultipartFile[] slidePictureFiles,
+            @RequestParam MultipartFile[] detailPictureFiles) {
+        productService.create(productService.getProductWithPictures(
+                product,
+                coverPictureFile,
+                slidePictureFiles,
+                detailPictureFiles
+        ));
+        return "redirect :/product/queryAll";
     }
 
     @RequestMapping("remove/{id}")
