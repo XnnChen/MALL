@@ -11,7 +11,7 @@ create table mall.user(
 drop table if exists mall.user_info;
 create table mall.user_info(
   id int primary key auto_increment comment 'id PK',
-  username varchar(255) not null comment 'username NN',
+  username varchar(255) comment 'username',
   avatar varchar(255) default 'default.png' comment 'avatar',
   mobile varchar(20) comment 'mobile',
   createTime varchar(255) comment 'sign up time',
@@ -72,4 +72,9 @@ from mall.user;
 
 select *
 from mall.user_info;
+
+select *
+from mall.category;
+
+
 

@@ -43,11 +43,12 @@ public class UserController extends BaseController {
 
     @RequestMapping("signIn")
     public String signIn(User user){
-        userService.signIn(user);
+        user = userService.signIn(user);
         if (user != null) {
             session.setAttribute("user", user);
             return "redirect:/portal/home.jsp";
         }
+        request.setAttribute("message","Invalid Email or Password.");
         return "/sign-in.jsp";
     }
 

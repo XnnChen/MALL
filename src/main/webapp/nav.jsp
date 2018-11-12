@@ -1,6 +1,13 @@
 <%@ page contentType="text/html; charset=UTF-8" %>
 <%@ include file="commons/inc.jsp" %>
-
+<style>
+    #avatar{
+        height: 30px;
+    }
+    .nav li{
+        top: -5px;
+    }
+</style>
 <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
@@ -24,7 +31,7 @@
             <c:if test="${sessionScope.user ne null}">
                 <li><a class="pop" href="#" data-toggle="popover" data-container="body" data-trigger="hover" data-placement="bottom" title="Header..."
                        data-content="<a href=&quot;/user/signOut&quot;>Sign out</a>">
-                    <img class="avatar img-circle" src="/assets/avatar/${sessionScope.user.userInfo.avatar}"> ${sessionScope.user.email}</a></li>
+                    <img id="avatar" class="avatar img-circle" src="/assets/avatar/${sessionScope.user.userInfo.avatar}"> ${sessionScope.user.email}</a></li>
             </c:if>
         </ul>
     </div><!-- /.navbar-collapse -->

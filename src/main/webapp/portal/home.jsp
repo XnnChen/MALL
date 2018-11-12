@@ -11,8 +11,8 @@
 <head>
     <title>home page</title>
     <style>
-        @import "../assets/bootstrap/css/bootstrap.css";
-        @import "../assets/styles/global.css";
+        @import "${ctx}/assets/bootstrap/css/bootstrap.css";
+        @import "${ctx}/assets/styles/global.css";
     </style>
 </head>
 <body>
@@ -22,7 +22,7 @@
 
 </main>
 <footer class="index jumbotron"></footer>
-<script src="assets/scripts/jquery.min.js"></script>
-<script src="assets/bootstrap/js/bootstrap.js"></script>
-<script src="assets/scripts/global.js"></script>
+<script src="${ctx}/assets/scripts/jquery.min.js"></script>
+<script src="${ctx}/assets/bootstrap/js/bootstrap.js"></script>
+<script src="${ctx}/assets/scripts/global.js"></script>
 </body>

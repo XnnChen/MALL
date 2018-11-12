@@ -54,7 +54,7 @@ public class UserServiceImpl extends GenericServiceImpl<User, Integer> implement
 
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         String createTime = simpleDateFormat.format(new Date());
-        Integer userId = user.getId();
+        int userId = user.getId();
         UserInfo userInfo = new UserInfo(createTime, userId);
         userInfoDao.create(userInfo);
         return true;

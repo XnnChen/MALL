@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="category">
+    <insert id="create" parameterType="category" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO mall.category (
+            title, 
+            `desc`,
+            parentId, 
+            status, 
+            createTime
+        )
+        VALUES (
+            #{title}, 
+            #{desc}, 
+            #{parentId}, 
+            #{status}, 
+            now()
+        )
+    </insert>
+    <delete id="remove">
+        DELETE FROM mall.category
+        WHERE category.id = #{id}
+    </delete>
+    <update id="modify">
+        UPDATE mall.category
+        SET
+            title = #{title}, 
+            `desc` = #{desc},
+            parentId = #{parentId}, 
+            status = #{status},
+            updateTime = now()
+        WHERE category.id = #{id}
+    </update>
+    <select id="queryAll" resultType="category">
+        SELECT *
+        FROM mall.category
+        ORDER BY id
+    </select>
+    <select id="queryById" resultType="category">
+        SELECT *
+        FROM mall.category
+        WHERE category.id = #{id}
+    </select>
+
+    <select id="queryFirstLevelCategory" resultType="category">
+        select *
+        from mall.category
+        where parentId is null
+    </select>
+
+    <resultMap id="queryCategoryTree_map" type="category">
+        <result property="title" column="firstLevelTitle"/>
+        <collection property="categories" ofType="category">
+            <id property="id" column="id"/>
+            <result property="title" column="title"/>
+        </collection>
+    </resultMap>
+    <select id="queryCategoryTree" resultMap="queryCategoryTree_map">
+        select c1.title as firstLevelTitle, c2.id, c2.title
+        from mall.category c1
+                 left outer join mall.category c2 on c1.id = c2.parentId
+        where c1.parentId is null
+    </select>
+</mapper>

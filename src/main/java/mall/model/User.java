@@ -12,4 +12,9 @@ public class User extends BaseModel {
     private String email;
     private String password;
     private UserInfo userInfo;
+
+    public User(String email, String password) {
+        this.email = email;
+        this.password = password;
+    }
 }

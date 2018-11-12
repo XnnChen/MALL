@@ -1450,9 +1450,8 @@
     </column>
     <column id="324" parent="249" name="username">
       <Position>2</Position>
-      <Comment>username NN</Comment>
+      <Comment>username</Comment>
       <DataType>varchar(255)|0s</DataType>
-      <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="325" parent="249" name="avatar">
