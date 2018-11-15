@@ -49,23 +49,40 @@ create table mall.product (
 ) comment 'product table';
 
 drop table if exists mall.category;
-create table mall.category(
-  id int auto_increment primary key comment 'id PK',
-  title varchar(255) not null comment 'title NN',
-  `desc` varchar(255) comment 'describe',
-  parentId int comment 'parent category id',
-  status int default 0 comment 'status 0- 1-',
-  createTime datetime not null comment 'create time NN',
+create table mall.category (
+  id         int auto_increment primary key
+  comment 'id PK',
+  title      varchar(255) not null
+  comment 'title NN',
+  `desc`     varchar(255)
+  comment 'describe',
+  parentId   int comment 'parent category id',
+  status     int default 0
+  comment 'status 0- 1-',
+  createTime datetime     not null
+  comment 'create time NN',
   updateTime datetime comment 'update time'
 ) comment 'category table';
 
 
 alter table mall.user_info
-  add constraint user_info_fk_userId 
+  add constraint user_info_fk_userId
 foreign key (userId) references mall.user (id);
 
-alter table mall.product add constraint product_fk_category
-foreign key (categoryId) references mall.category(id);
+alter table mall.product
+  add constraint product_fk_category
+foreign key (categoryId) references mall.category (id);
+
+insert into mall.category (title, createTime)
+value ('中外名酒', now());
+insert into mall.category (title, createTime)
+value ('茗茶', now());
+insert into mall.category (title, createTime)
+value ('饮料', now());
+insert into mall.category (title, createTime)
+value ('冲调饮品', now());
+insert into mall.category (title, createTime)
+value ('进口饮品', now());
 
 select *
 from mall.user;
@@ -75,6 +92,13 @@ from mall.user_info;
 
 select *
 from mall.category;
+
+select *
+from mall.product;
+
+select *
+from mall.category c1
+       inner join mall.category c2 on c1.id = c2.parentId;
 
 
 

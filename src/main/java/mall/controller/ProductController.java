@@ -1,5 +1,6 @@
 package mall.controller;
 
+import mall.service.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -8,11 +9,19 @@ import mall.model.Product;
 import mall.service.ProductService;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.util.List;
+
 @Controller
 @RequestMapping("product")
 public class ProductController extends BaseController {
 
-    private final ProductService productService;
+    private ProductService productService;
+    private CategoryService categoryService;
+
+    @Autowired
+    public void setCategoryService(CategoryService categoryService) {
+        this.categoryService = categoryService;
+    }
 
     @Autowired
     public ProductController(ProductService productService) {
@@ -31,7 +40,7 @@ public class ProductController extends BaseController {
                 slidePictureFiles,
                 detailPictureFiles
         ));
-        return "redirect :/product/queryAll";
+        return "redirect:/product/queryAll";
     }
 
     @RequestMapping("remove/{id}")
@@ -49,12 +58,24 @@ public class ProductController extends BaseController {
     @RequestMapping("queryAll")
     private String queryAll() {
         session.setAttribute("list", productService.queryAll());
-        return "redirect:/product/list.jsp";
+        return "redirect:/admin/product/list.jsp";
     }
 
     @RequestMapping("queryById/{id}")
     private String queryById(@PathVariable("id") Integer id) {
         session.setAttribute("product", productService.queryById(id));
-        return "redirect:/product/edit.jsp";
+        return "redirect:/admin/product/edit.jsp";
+    }
+
+    @RequestMapping("add")
+    private String add(){
+        session.setAttribute("categories", categoryService.queryList("queryCategoryTree", null));
+        return "redirect:/admin/product/add.jsp";
+    }
+
+    @RequestMapping("index")
+    @ResponseBody
+    private List<Product> index(){
+        return productService.queryList("queryIndexProducts", null);
     }
 }

@@ -47,7 +47,7 @@
                 <td>${product.updateTime}</td>
                 <td>${product.categoryId}</td>
                 <td><a href="${ctx}/product/queryById/${product.id}">EDIT</a></td>
-                <td><a class="delete" href="${ctx }/product/remove/${product.id}" onclick="return del()">REMOVE</a></td>
+                <td><a class="delete" href="${ctx}/product/remove/${product.id}" onclick="return del()">REMOVE</a></td>
             </tr>
             </c:forEach>
         </table>

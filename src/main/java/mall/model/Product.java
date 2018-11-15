@@ -3,12 +3,13 @@ package mall.model;
 import lombok.Data;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
-import lombok.EqualsAndHashCode;
+
+import java.io.Serializable;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Product extends BaseModel {
+public class Product implements Serializable {
     private Integer id;
     private String title;
     private String desc;
@@ -22,5 +23,5 @@ public class Product extends BaseModel {
     private int status;
     private String createTime;
     private String updateTime;
-    private int categoryId;
+    private Integer categoryId;
 }

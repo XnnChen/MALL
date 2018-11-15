@@ -4,16 +4,17 @@ import lombok.Data;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 
+import java.io.Serializable;
 import java.util.List;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Category extends BaseModel {
+public class Category implements Serializable {
     private Integer id;
     private String title;
     private String desc;
-    private int parentId;
+    private Integer parentId;
     private int status;
     private String createTime;
     private String updateTime;

@@ -64,7 +64,7 @@
         WHERE product.id = #{id}
     </select>
 
-    <select id="queryIndexByProducts" resultType="product">
+    <select id="queryIndexProducts" resultType="product">
         select id, title, coverPicture, price, originalPrice, `desc`
         from mall.product
         where status = 0;

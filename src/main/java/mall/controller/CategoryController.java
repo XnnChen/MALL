@@ -2,8 +2,8 @@ package mall.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.*;
-
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
 import mall.model.Category;
 import mall.service.CategoryService;
 
@@ -51,7 +51,7 @@ public class CategoryController extends BaseController {
     }
 
     @RequestMapping("add")
-    private String add(){
+    private String add() {
         session.setAttribute("categories", categoryService.queryList("queryFirstLevelCategory", null));
         return "redirect:/admin/category/add.jsp";
     }

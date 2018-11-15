@@ -17,10 +17,11 @@
             DETAILPICTURES: <input name="detailPictures" value="${sessionScope.product.detailPictures}"><br>
             SPEC: <input name="spec" value="${sessionScope.product.spec}"><br>
             STOCK: <input name="stock" value="${sessionScope.product.stock}"><br>
-            STATUS: <input name="status" value="${sessionScope.product.status}"><br>
-            CREATETIME: <input name="createTime" value="${sessionScope.product.createTime}"><br>
-            UPDATETIME: <input name="updateTime" value="${sessionScope.product.updateTime}"><br>
-            CATEGORYID: <input name="categoryId" value="${sessionScope.product.categoryId}"><br>
+            STATUS:
+            <select name="status">
+                <option value="0">上架</option>
+                <option value="1">暂存</option>
+            </select><br>
             <input type="submit" value="SAVE">
         </form>
     </body>

@@ -33,9 +33,10 @@
                 <td>${category.createTime}</td>
                 <td>${category.updateTime}</td>
                 <td><a href="${ctx}/category/queryById/${category.id}">EDIT</a></td>
-                <td><a class="delete" href="${ctx }/category/remove/${category.id}" onclick="return del()">REMOVE</a></td>
+                <td><a class="delete" href="${ctx}/category/remove/${category.id}" onclick="return del()">REMOVE</a></td>
             </tr>
             </c:forEach>
+            CATEGORY
         </table>
     </body>
 </html>

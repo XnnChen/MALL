@@ -29,7 +29,7 @@
                 <td>${'$'}{${model?lower_case}.${key}}</td>
                 </#list>
                 <td><a href="${'$'}{ctx}/${model?lower_case}/queryById/${'$'}{${model?lower_case}.id}">EDIT</a></td>
-                <td><a class="delete" href="${'$'}{ctx }/${model?lower_case}/remove/${'$'}{${model?lower_case}.id}" onclick="return del()">REMOVE</a></td>
+                <td><a class="delete" href="${'$'}{ctx}/${model?lower_case}/remove/${'$'}{${model?lower_case}.id}" onclick="return del()">REMOVE</a></td>
             </tr>
             </c:forEach>
         </table>

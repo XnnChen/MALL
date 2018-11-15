@@ -11,7 +11,7 @@
             <input name="desc" placeholder="DESC"><br>
             <p>一级类目</p>
             <c:forEach var="category" items="${sessionScope.categories}">
-                ${category.title}<input type="radio" name="parentId" value="${category.id}">
+                <input type="radio" name="parentId" value="${category.id}">${category.title}
             </c:forEach>
             <p>状态</p>
             <select name="status">

@@ -35,9 +35,20 @@
                 <option value="0">上架</option>
                 <option value="1">暂存</option>
             </select><br>
+            CATEGORY
+            <select name="categoryId">
+                <c:forEach var="category" items="${sessionScope.categories}">
+                    <option disabled="disabled">${category.title}</option>
+                    <c:if test="${fn:length(category.categories) > 0}">
+                        <c:forEach var="subCategory" items="${category.categories}">
+                            <option value="${subCategory.id}">${subCategory.title}</option>
+                        </c:forEach>
+                    </c:if>
+                </c:forEach>
+            </select><br>
             <input type="submit" value="ADD">
         </form>
-        <script src="../../assets/scripts/jquery.min.js"></script>
+        <script src="${ctx}/assets/scripts/jquery.min.js"></script>
         <script>
             $(function () {
                 $("span").on("click", function () {

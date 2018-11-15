@@ -13,10 +13,10 @@
             <p>一级类目</p>
             <c:forEach var="category" items="${sessionScope.categories}">
                 <c:if test="${category.id eq sessionScope.category.parentId}">
-                    ${category.title} <input type="radio" name="parentId" value="${category.id}" checked="checked">
+                    <input type="radio" name="parentId" value="${category.id}" checked="checked">${category.title}
                 </c:if>
                 <c:if test="${category.id ne sessionScope.category.parentId}">
-                    ${category.title} <input type="radio" name="parentId" value="${category.id}">
+                    <input type="radio" name="parentId" value="${category.id}">${category.title}
                 </c:if>
             </c:forEach>
             <p>状态</p>
@@ -26,8 +26,8 @@
                     <option value="1">关闭</option>
                 </c:if>
                 <c:if test="${sessionScope.category.status eq 1}">
-                    <option value="0"启用</option>
-                    <option value="1" selected="selected">>关闭</option>
+                    <option value="0">启用</option>
+                    <option value="1" selected="selected">关闭</option>
                 </c:if>
             </select><br>
             CREATE TIME: ${sessionScope.category.createTime}<br>
