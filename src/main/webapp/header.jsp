@@ -7,11 +7,17 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ include file="commons/inc.jsp" %>
+<html>
+<header>
 <style>
+    @import "assets/bootstrap/css/bootstrap.css";
+    @import "assets/styles/global.css";
     h4{
         text-align: center;
     }
 </style>
+</header>
+<body>
 <div class="container">
     <div class="col-lg-6">
         <p>
@@ -30,3 +36,18 @@
         </form>
     </div>
 </div>
+</body>
+<script src="assets/scripts/jquery.min.js"></script>
+<script>
+    <%--$(function () {--%>
+        <%--$.ajax({--%>
+            <%--url:'${ctx}/category/index',--%>
+            <%--type: 'post',--%>
+            <%--dataType: 'json',--%>
+            <%--success:function (data) {--%>
+                <%--$('ul#nav').append('<li><a href="">'+${sessionScope.category.title}+'</a></li>')--%>
+            <%--}--%>
+        <%--})--%>
+    <%--})--%>
+</script>
+</html>

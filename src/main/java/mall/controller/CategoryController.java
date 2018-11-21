@@ -6,6 +6,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import mall.model.Category;
 import mall.service.CategoryService;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import java.util.List;
 
 @Controller
 @RequestMapping("category")
@@ -54,5 +57,11 @@ public class CategoryController extends BaseController {
     private String add() {
         session.setAttribute("categories", categoryService.queryList("queryFirstLevelCategory", null));
         return "redirect:/admin/category/add.jsp";
+    }
+
+    @RequestMapping("index")
+    @ResponseBody
+    private List<Category> index(){
+        return categoryService.queryList("queryIndexCategories", null);
     }
 }

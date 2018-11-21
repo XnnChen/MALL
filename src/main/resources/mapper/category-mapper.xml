@@ -64,4 +64,10 @@
                  left outer join mall.category c2 on c1.id = c2.parentId
         where c1.parentId is null
     </select>
+
+    <select id="queryIndexCategories" resultType="category">
+        select id, title
+        from mall.category
+        where status = 0 and parentId is null
+    </select>
 </mapper>
