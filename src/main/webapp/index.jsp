@@ -82,7 +82,7 @@
 
       $(document).on('click', 'article, p.t',function () {
           var id = $(this).parent('section').attr('id');
-          window.location.href = 'detail.jsp?id=' + id;
+          window.location.href = '/product/detail/' + id;
       })
   });
 </script>

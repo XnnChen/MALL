@@ -100,5 +100,7 @@ select *
 from mall.category c1
        inner join mall.category c2 on c1.id = c2.parentId;
 
-
+select *
+from mall.product
+limit 3 offset 0;
 
